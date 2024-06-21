@@ -49,7 +49,7 @@ body{
 }
 
 
-/* makes nav horizontal */
+/* makes flow horizontal */
 #header{
     display: flex;
     align-items: center;
@@ -57,4 +57,20 @@ body{
     padding: 20px 80px;
     background-color: #E3E6F3;
     box-shadow: 0 5PX 15PX rgb(0, 0, 0);
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* remove bullets and space between items */
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+}
+
+.shopping-cart{
+    height: 30px;
 }
