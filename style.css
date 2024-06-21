@@ -47,3 +47,14 @@ body{
 .logo{
     height: 100px;
 }
+
+
+/* makes nav horizontal */
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #E3E6F3;
+    box-shadow: 0 5PX 15PX rgb(0, 0, 0);
+}
