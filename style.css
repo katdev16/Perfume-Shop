@@ -105,7 +105,9 @@ body{
 
 /* Home Page */
 #hero{
-    background-image: url(img/StockCake-Mystical\ Blue\ Perfume_1719137489.jpg);
+    background-image: url(img/StockCake-Crystal\ Perfume\ Bottle_1719137739.jpg);
+    height: 90vh;
+    width: 100;
     color: aliceblue;
 }
 
