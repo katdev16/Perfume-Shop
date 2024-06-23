@@ -109,6 +109,8 @@ body{
     height: 90vh;
     width: 100;
     color: aliceblue;
+    background-size: cover;
+    background-position: top 25% right0%;
 }
 
 
