@@ -183,6 +183,12 @@ body{
 /* aliging box iteams */
 #feature{
     display: flex;
-
 }
 
+.product img{
+    height: 300px;
+}
+
+.product1{
+    text-align: center;
+}
