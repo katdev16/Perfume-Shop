@@ -69,6 +69,7 @@ body{
 #navbar li{
     list-style: none;
     padding: 0 20px;
+    position: relative;
 }
 
 .shopping-cart{
@@ -84,9 +85,23 @@ body{
     transition: 0.3s ease;
 }
 
-#navbar li a:hover{
+#navbar li a:hover,
+#navbar li a.active {
     color: blue;
 }
+
+ 
+
+#navbar li a.active::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: blue;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
 
 
 
