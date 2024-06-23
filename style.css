@@ -164,15 +164,25 @@ body{
 
 
 #feature .fe-box:hover{
-    box-shadow: 10px 10px 54px rgb(70, 62, 221,0.1);
+    box-shadow: 10px 10px 54px rgba(14, 14, 15, 0.333);
 }
 
 #feature .fe-box h6{
-    padding: 9px 12px 6px 12px;
+    padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
     color: rgb(0, 0, 0);
     background-color: rgb(178, 238, 245);
 }
 
+#feature .fe-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* aliging box iteams */
+#feature{
+    display: flex;
+
+}
 
