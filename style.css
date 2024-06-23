@@ -185,10 +185,24 @@ body{
     display: flex;
 }
 
-.product img{
+#product1 .pro img{
     height: 300px;
 }
 
-.product1{
+#product1{
     text-align: center;
+}
+
+
+#product .pro{
+    width: 23%;
+    min-width: 250px;
+  
+    padding: 10px 12px;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+#product1{
+    border: 1px solid black;
 }
