@@ -186,7 +186,9 @@ body{
 }
 
 #product1 .pro img{
-    height: 300px;
+    /* height: 300px; */
+    width: 100%;
+    border-radius: 20px;
 }
 
 #product1{
@@ -194,15 +196,43 @@ body{
 }
 
 
-#product .pro{
+#product1 .pro{
     width: 23%;
     min-width: 250px;
   
     padding: 10px 12px;
-    border: 1px solid white;
+    border: 1px solid rgba(0, 0, 0, 0.466);
     border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(222, 222, 222, 0.485);
+    margin: 15px 0;
+    transition: 0.4s ease;
+}
+
+#product1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(111, 111, 111, 0.425);
 }
 
 #product1{
+    width: 100%;
     border: 1px solid black;
+}
+
+/* styling text */
+#product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: blue;
+    font-size: 13px;
+}
+
+/* styling stars */
+
+
+#product1 .pro .des i {
+    color: rgb(231, 231, 9);
+
 }
