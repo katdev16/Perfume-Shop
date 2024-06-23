@@ -56,7 +56,13 @@ body{
     justify-content: space-between;
     padding: 20px 80px;
     background-color: #E3E6F3;
-    box-shadow: 0 5PX 15PX rgb(0, 0, 0);
+    box-shadow: 0 5PX 15PX rgba(0, 0, 0, 0.277);
+    /* navbar always top */ 
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    /*  */
 }
 
 #navbar{
@@ -136,6 +142,37 @@ body{
     font-size: 15px;
 }
 
+#hero button:hover{
+    background-color: rgba(0, 0, 0, 0.249);
+}
 
+
+.fe-box img{
+    height: 100px;
+    color: black;
+}
+
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px 32px rgba(0, 0, 0, 0);
+    border: 1px soild rgba(128, 124, 124, 0.595);
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgb(70, 62, 221,0.1);
+}
+
+#feature .fe-box h6{
+    padding: 9px 12px 6px 12px;
+    line-height: 1;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(178, 238, 245);
+}
 
 
