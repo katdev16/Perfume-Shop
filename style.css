@@ -236,3 +236,11 @@ body{
     color: rgb(231, 231, 9);
 
 }
+
+/* aliging products */
+
+#product .pro-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
