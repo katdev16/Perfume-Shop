@@ -160,6 +160,8 @@ body{
     border: 1px soild rgba(128, 124, 124, 0.595);
     border-radius: 10px;
     margin: 15px 0;
+
+    justify-content: center;
 }
 
 
@@ -183,6 +185,7 @@ body{
 /* aliging box iteams */
 #feature{
     display: flex;
+    justify-content: center;
 }
 
 #product1 .pro img{
