@@ -253,6 +253,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: rgba(8, 105, 116, 0.498);
 
 }
 
