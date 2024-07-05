@@ -264,7 +264,16 @@ footer .col{
     margin-bottom: 20px;
 }
 footer .col a{
+    padding-top: 10px;
     text-decoration: none;
     color: #1a1a1a;
-    
+}
+
+footer .col a:hover{
+
+    color: blue;
+}
+
+.col .icon{
+    padding-top: 10px;
 }
