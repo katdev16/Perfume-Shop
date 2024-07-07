@@ -154,6 +154,7 @@ body{
 .fe-box img{
     height: 100px;
     color: black;
+    
 }
 
 #feature .fe-box{
@@ -190,6 +191,7 @@ body{
 #feature{
     display: flex;
     justify-content: center;
+   
 }
 
 #product1 .pro img{
