@@ -78,6 +78,10 @@ body{
     position: relative;
 }
 
+#feature{
+    background-color: aliceblue;
+}
+
 .shopping-cart{
     height: 30px;
 }
@@ -253,7 +257,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: rgba(8, 105, 116, 0.498);
+    background-color: aliceblue;
 
 }
 
