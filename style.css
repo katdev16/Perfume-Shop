@@ -280,6 +280,16 @@ footer .col a:hover{
 
     color: blue;
 }
+footer p {
+    font-size: 15px;
+    margin: 0 0 8px 0;
+}
+
+footer .follow i{
+    padding-right: 5px;
+    margin-top: 10px;
+
+}
 
 .col .icon{
     padding-top: 10px;
