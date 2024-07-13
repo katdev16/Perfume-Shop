@@ -113,6 +113,11 @@ body{
     left: 20px;
 }
 
+#mobile{
+    display: none;
+    align-items: center;
+}
+
 /* Home Page */
 #hero{
     background-image: url(img/StockCake-Crystal\ Perfume\ Bottle_1719137739.jpg);
