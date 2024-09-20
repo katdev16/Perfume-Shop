@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .product-list, .cart {
+      margin: 20px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+    }
+    .cart {
+      border-top: 2px solid black;
+      padding-top: 20px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+    .total-price {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Shop Our Products</h1>
+
+  <div class="product-list">
+    <!-- Product cards will be dynamically inserted here -->
+  </div>
+
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <div class="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <p>Total Items: <span class="total-items">0</span></p>
+    <p>Total Price: $<span class="total-price">0.00</span></p>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>
