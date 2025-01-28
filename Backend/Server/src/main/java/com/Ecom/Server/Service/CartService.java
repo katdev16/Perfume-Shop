@@ -19,14 +19,14 @@ public class CartService {
     }
 
     // Add a product to a cart
-    public Cart addToCart(Long cartId, int productId) {
-        // Retrieve the cart by ID
+    public Cart addToCart(int cartId, int productId) {
+
         Optional<Cart> cartOptional = cartRepository.findById(cartId);
         if (cartOptional.isEmpty()) {
             throw new RuntimeException("Cart not found with ID: " + cartId);
         }
 
-        // Retrieve the product by ID
+
         Optional<Product> productOptional = productsRepository.findById(productId);
         if (productOptional.isEmpty()) {
             throw new RuntimeException("Product not found with ID: " + productId);
@@ -35,15 +35,15 @@ public class CartService {
         Cart cart = cartOptional.get();
         Product product = productOptional.get();
 
-        // Add the product to the cart
+
         cart.addProduct(product);
 
-        // Save the cart back to the database
+
         return cartRepository.save(cart);
     }
 
-    // Get all products in the cart
-    public Cart getCartById(Long cartId) {
+
+    public Cart getCartById(int cartId) {
         return cartRepository.findById(cartId)
                 .orElseThrow(() -> new RuntimeException("Cart not found with ID: " + cartId));
     }
