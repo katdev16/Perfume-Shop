@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../img/Blue Modern Technology & Gaming Logo.png";
 import cartIcon from "../img/shopping-cart.png";
+import { Link } from "react-router-dom"; 
 
 function Header() {
   return (
@@ -25,17 +26,18 @@ function Header() {
           <li>
             <a href="contact.html">Contact</a>
           </li>
+          
           <li id="lg-bag">
-            <a href="cart.html">
+            <Link to="/cart">
               <img src={cartIcon} className="shopping-cart" alt="Cart" />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <div id="mobile">
-        <a href="cart.html">
+        <Link to="/cart">
           <img src={cartIcon} className="shopping-cart" alt="Cart" />
-        </a>
+        </Link>
         <i id="bar" className="fas fa-outdent"></i>
       </div>
     </header>

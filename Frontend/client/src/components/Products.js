@@ -20,7 +20,7 @@ function Products() {
         {products.map((product) => (
           <div key={product.id} className="pro">
             <img
-              src={`/img/${product.image}`} // Ensure image names match
+              src={productImg} // Ensure image names match
               alt={product.name}
             />
             <div className="des">

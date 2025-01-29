@@ -1,4 +1,4 @@
-package com.katdev.accountabilityapp.config;
+package com.Ecom.Server.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
