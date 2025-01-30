@@ -1,6 +1,7 @@
 // import React from "react";
 import productImg from "../img/StockCake-Sunset Perfume Silhouette_1719167831.jpg";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -11,6 +12,20 @@ function Products() {
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
+
+  const addToCart = async (product) => {
+    console.log("------")
+    console.log(product.id)
+    console.log("------")
+    try {
+      const response = await axios.post(`http://localhost:8080/cart/1/add/${String(product.id)}`, product);
+
+      return response.data;
+    } catch (error) {
+      console.error("Failed to add to cart:", error.response?.data?.message || error.message);
+      throw new Error(error.response?.data?.message || "Failed to add to cart");
+    }
+  };
 
   return (
     <section id="product1" className="section-p1">
@@ -35,7 +50,8 @@ function Products() {
               </div>
               <h4>R{product.price}</h4>
               <a href="#">
-                <button id="cart-btn">Add to cart</button>
+              <button id="cart-btn" onClick={() => addToCart(product)}>Add to cart</button>
+
               </a>
             </div>
           </div>

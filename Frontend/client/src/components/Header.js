@@ -3,7 +3,7 @@ import logo from "../img/Blue Modern Technology & Gaming Logo.png";
 import cartIcon from "../img/shopping-cart.png";
 import { Link } from "react-router-dom"; 
 
-function Header() {
+const Header = ({ scrollToFooter }) => {
   return (
     <header id="header">
       <a href="#">
@@ -11,8 +11,10 @@ function Header() {
       </a>
       <nav>
         <ul id="navbar">
-          <li>
-            <a className="active" href="index.html">Home</a>
+        <li>
+            <Link to="/" className="active">
+              Home
+            </Link>
           </li>
           <li>
             <a href="shop.html">Shop</a>
@@ -21,7 +23,9 @@ function Header() {
             <a href="blog.html">Blog</a>
           </li>
           <li>
-            <a href="about.html">About</a>
+            <Link onClick={() => scrollToFooter.current.scrollIntoView({ behavior: "smooth" })}>
+              About 
+            </Link>
           </li>
           <li>
             <a href="contact.html">Contact</a>
