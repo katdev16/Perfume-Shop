@@ -15,15 +15,20 @@ import Cart from "./components/Cart";
 function App() {
   return (
     <Router>
-      <Header />
-      <Hero/>
-      <Features/>
-      <Products/>
-      <Footer/>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> Home page */}
-        <Route path="/cart" element={<Cart />} /> {/* Cart page */}
-        {/* Add other routes for Shop, Blog, etc. */}
+        <Route
+          path="/home"
+          element={
+            <>
+              <Header />
+              <Hero />
+              <Features />
+              <Products />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/cart" element={<><Header /><Cart /></>} />
       </Routes>
     </Router>
   );

@@ -1,29 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Products from "./Products";
 
 const Cart = () => {
   const initialCartItems = [
-    {
-      id: 1,
-      name: "Ocean Scent Perfume",
-      price: 200,
-      quantity: 1,
-      image: "img/StockCake-Sunset Perfume Silhouette_1719167831.jpg",
-    },
-    {
-      id: 2,
-      name: "Crystal Perfume",
-      price: 300,
-      quantity: 1,
-      image: "img/StockCake-Sunset Perfume Silhouette_1719167831.jpg",
-    },
+    // {
+    //   id: 1,
+    //   name: "Ocean Scent Perfume",
+    //   price: 200,
+    //   quantity: 1,
+    //   image: "img/StockCake-Sunset Perfume Silhouette_1719167831.jpg",
+    // },
+    // {
+    //   id: 2,
+    //   name: "Crystal Perfume",
+    //   price: 300,
+    //   quantity: 1,
+    //   image: "img/StockCake-Sunset Perfume Silhouette_1719167831.jpg",
+    // },
   ];
 
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/cart") // Adjust URL if needed
+    fetch("http://localhost:8080/cart/1") // Adjust URL if needed
       .then((response) => response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {
+        console.log("--------")
+        console.log(data.products)
+        console.log("--------")
+        setCartItems(data.products)
+  })
+
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
@@ -47,6 +54,9 @@ const Cart = () => {
 
   // Calculate total price
   const calculateTotal = () => {
+    // console.log("--------")
+    // console.log(data)
+    // console.log("--------")
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
