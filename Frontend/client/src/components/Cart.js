@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Cart = () => {
-  // Initial cart items with mock data
   const initialCartItems = [
     {
       id: 1,
@@ -19,8 +18,18 @@ const Cart = () => {
     },
   ];
 
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/cart") // Adjust URL if needed
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error fetching products:", error));
+  }, []);
+
+
   // State to manage cart items
-  const [cartItems, setCartItems] = useState(initialCartItems);
+  // const [cartItems, setCartItems] = useState(initialCartItems);
 
   // Handle quantity change
   const handleQuantityChange = (id, newQuantity) => {

@@ -13,6 +13,11 @@ public class CartController {
         this.cartService = cartService;
     }
 
+    @PostMapping("/create")
+    public Cart createCart() {
+        return cartService.createCart();
+    }
+
   
     @PostMapping("/{cartId}/add/{productId}")
     public Cart addToCart(@PathVariable int cartId, @PathVariable int productId) {

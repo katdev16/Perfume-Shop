@@ -10,13 +10,16 @@ import './assets/styles/global.css';
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Cart from "./components/Cart"; // Assuming you have a Cart component
- // Example for the Home component
+import Cart from "./components/Cart";
 
 function App() {
   return (
     <Router>
       <Header />
+      <Hero/>
+      <Features/>
+      <Products/>
+      <Footer/>
       <Routes>
         {/* <Route path="/" element={<Home />} /> Home page */}
         <Route path="/cart" element={<Cart />} /> {/* Cart page */}

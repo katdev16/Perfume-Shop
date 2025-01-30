@@ -47,4 +47,9 @@ public class CartService {
         return cartRepository.findById(cartId)
                 .orElseThrow(() -> new RuntimeException("Cart not found with ID: " + cartId));
     }
+
+    public Cart createCart() {
+        Cart cart = new Cart(); // Create an empty cart
+        return cartRepository.save(cart);
+    }
 }
