@@ -1,4 +1,3 @@
-/* Modal Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -7,44 +6,94 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 1000;
+    justify-content: center;
   }
   
-  /* Modal Content */
   .modal-content {
-    background: white;
+    background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    border-radius: 8px;
+    width: 350px;
     text-align: center;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    position: relative; /* Needed for absolute positioning of close button */
   }
   
-  /* Form Inputs */
-  .modal-content input {
+  .modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+  
+  /* X Close Button at the top-left */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: #333;
+    width: 10%;
+  }
+  
+  .close-btn:hover {
+    color: red;
+  }
+  
+  input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  /* Submit Button */
-  .modal-content button {
+  /* button {
     width: 100%;
     padding: 10px;
     background: #007bff;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  } */
+  
+  button:hover {
+    background: #0056b3;
   }
   
-  /* Close Button */
-  .close-btn {
-    margin-top: 10px;
-    background: #ff4d4d;
+  .toggle-link {
+    color: #007bff;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .toggle-link:hover {
+    text-decoration: underline;
+  }
+  .google-signin-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .google-signin-btn:hover {
+    background-color: #357AE8;
+  }
+  
+  .google-icon {
+    font-size: 20px;  /* Google icon size */
+    margin-right: 10px; /* Space between icon and text */
   }
   

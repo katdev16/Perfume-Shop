@@ -11,6 +11,8 @@ import LoginForm from "./components/LoginForm";
 
 import "./App.css";
 import "./assets/styles/global.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   const footerRef = useRef(null);
