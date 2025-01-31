@@ -12,6 +12,7 @@ import LoginForm from "./components/LoginForm";
 import "./App.css";
 import "./assets/styles/global.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import ProductDetails from "./components/ProductDetails"; 
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
             }
           />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} /> {/* Product details page */}
         </Routes>
 
         {/* ✅ Show Login Modal */}

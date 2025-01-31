@@ -1,6 +1,6 @@
-// import React from "react";
-import productImg from "../img/StockCake-Sunset Perfume Silhouette_1719167831.jpg";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link to handle routing
+import productImg from "../img/StockCake-Sunset Perfume Silhouette_1719167831.jpg";
 import axios from "axios";
 
 function Products() {
@@ -14,12 +14,11 @@ function Products() {
   }, []);
 
   const addToCart = async (product) => {
-    console.log("------")
-    console.log(product.id)
-    console.log("------")
+    console.log("------");
+    console.log(product.id);
+    console.log("------");
     try {
       const response = await axios.post(`http://localhost:8080/cart/1/add/${String(product.id)}`, product);
-
       return response.data;
     } catch (error) {
       console.error("Failed to add to cart:", error.response?.data?.message || error.message);
@@ -33,28 +32,27 @@ function Products() {
       <p>Collection of perfumes</p>
       <div className="pro-container">
         {products.map((product) => (
-          <div key={product.id} className="pro">
-            <img
-              src={productImg} // Ensure image names match
-              alt={product.name}
-            />
-            <div className="des">
-              <span>{product.description}</span>
-              <h5>{product.name}</h5>
-              <div className="star">
-                {Array(5)
-                  .fill()
-                  .map((_, starIndex) => (
-                    <i key={starIndex} className="fas fa-star"></i>
-                  ))}
+          <Link key={product.id} to={`/product/${product.id}`} className="pro"> {/* Link to product details page */}
+            {/* <div className="pro"> */}
+              <img
+                src={productImg} // Ensure image names match
+                alt={product.name}
+              />
+              <div className="des">
+                <span>{product.description}</span>
+                <h5>{product.name}</h5>
+                <div className="star">
+                  {Array(5)
+                    .fill()
+                    .map((_, starIndex) => (
+                      <i key={starIndex} className="fas fa-star"></i>
+                    ))}
+                </div>
+                <h4>R{product.price}</h4>
+                <button id="cart-btn" onClick={(e) => { e.preventDefault(); addToCart(product); }}>Add to cart</button>
               </div>
-              <h4>R{product.price}</h4>
-              <a href="#">
-              <button id="cart-btn" onClick={() => addToCart(product)}>Add to cart</button>
-
-              </a>
-            </div>
-          </div>
+            {/* </div> */}
+          </Link>
         ))}
       </div>
     </section>
