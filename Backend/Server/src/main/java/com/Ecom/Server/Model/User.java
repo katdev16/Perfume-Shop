@@ -1,4 +1,4 @@
-package com.katdev.accountabilityapp.model;
+package com.Ecom.Server.Model;
 
 import jakarta.persistence.*;
 import java.util.List;
@@ -17,12 +17,11 @@ public class User {
 
     private String password; // New password field
 
+    public User() {
+
+    }
+
     // One-to-Many relationship with Task
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Task> tasks;
-
-    public User() {}
-
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
@@ -62,11 +61,5 @@ public class User {
         this.password = password; // Setter for password
     }
 
-    public List<Task> getTasks() {
-        return tasks;
-    }
 
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
 }
