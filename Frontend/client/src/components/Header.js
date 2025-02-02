@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../img/Blue Modern Technology & Gaming Logo.png";
 import cartIcon from "../img/shopping-cart.png";
 
-const Header = ({ scrollToFooter, onLoginClick }) => {
+const Header = ({ scrollToFooter, onLoginClick, isLoggedIn, onLogout }) => {
   return (
     <header id="header">
       <a href="#">
@@ -28,14 +28,16 @@ const Header = ({ scrollToFooter, onLoginClick }) => {
               <img src={cartIcon} className="shopping-cart" alt="Cart" />
             </Link>
           </li>
-          {/* ✅ Login Button */}
+          {/* Login or Logout Button */}
           <li>
-            <button className="login-btn" onClick={onLoginClick}>Login</button>
+            <button className="login-btn" onClick={isLoggedIn ? onLogout : onLoginClick}>
+              {isLoggedIn ? "Logout" : "Login"}
+            </button>
           </li>
         </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -15,10 +15,18 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import ProductDetails from "./components/ProductDetails"; 
 
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+function App() {  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState(null);
   const [showLoginForm, setShowLoginForm] = useState(false);
+
+  // Check login state on component mount
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("userId");
+    if (storedUserId) {
+      setIsLoggedIn(true);
+      setUserId(storedUserId);
+    }
+  }, []);
 
   // Toggle login form visibility
   const handleLoginClick = () => {
@@ -34,6 +42,7 @@ function App() {
   const handleLoginSuccess = (userId) => {
     setUserId(userId);
     setIsLoggedIn(true);
+    localStorage.setItem("userId", userId); // Store userId in localStorage
     setShowLoginForm(false); // Close the login form on success
   };
 
@@ -41,6 +50,7 @@ function App() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUserId(null);
+    localStorage.removeItem("userId"); // Remove userId from localStorage
   };
   const footerRef = useRef(null);
   const [showLogin, setShowLogin] = useState(false); // ✅ Manage Login Popup
@@ -48,7 +58,16 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <Header scrollToFooter={footerRef} onLoginClick={() => setShowLogin(true)} />
+        {/* <Header scrollToFooter={footerRef} onLoginClick={() => setShowLogin(true)}  /> */}
+        <Header
+        // scrollToFooter={footerRef} onLoginClick={() => setShowLogin(true)
+        onLoginClick={handleLoginClick}
+        isLoggedIn={isLoggedIn}
+        onLogout={handleLogout}
+      />
+       {showLoginForm && (
+        <LoginForm onClose={handleCloseLoginForm} onLoginSuccess={handleLoginSuccess} />
+      )}
         <Routes>
           <Route
             path="/"

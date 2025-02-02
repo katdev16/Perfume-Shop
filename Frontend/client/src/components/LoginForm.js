@@ -3,7 +3,7 @@ import "./LoginForm.css";
 import { loginUser, registerUser } from "../services/api"; 
 import { useNavigate } from "react-router-dom";
 
-const LoginForm = ({ onClose }) => {
+const LoginForm = ({ onClose, onLoginSuccess }) => {
   const [isSignup, setIsSignup] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +25,7 @@ const LoginForm = ({ onClose }) => {
       const userData = await loginUser({ email, password });
       setUserId(userData.id);
       setSuccess("Login successful!");
+      onLoginSuccess(userData.id); // Notify parent about successful login
       navigate("/", { state: { userId: userData.id } });
     } catch (err) {
       setError(err.message);

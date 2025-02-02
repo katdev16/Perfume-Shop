@@ -20,9 +20,11 @@ const Cart = () => {
   ];
 
   const [cartItems, setCartItems] = useState([]);
+  const userId = localStorage.getItem("userId");
+  console.log(`userid ${userId}`)
 
   useEffect(() => {
-    fetch("http://localhost:8080/cart/1") // Adjust URL if needed
+    fetch(`http://localhost:8080/cart/${userId}`) // Adjust URL if needed
       .then((response) => response.json())
       .then((data) => {
         console.log("--------")

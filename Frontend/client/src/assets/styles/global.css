@@ -78,6 +78,13 @@ body{
     position: relative;
 }
 
+#hero {
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
 #feature{
     background-color: aliceblue;
 }
@@ -120,7 +127,8 @@ body{
 
 /* Home Page */
 #hero{
-    /* background-image: url('/img/StockCake-Crystal\ Perfume\ Bottle_1719137739.jpg'); */
+    /* background-image: url(${perfumeImage}); */
+
     height: 90vh;
     width: 100;
     color: aliceblue;
