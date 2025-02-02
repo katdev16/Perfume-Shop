@@ -16,6 +16,32 @@ import ProductDetails from "./components/ProductDetails";
 
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
+  const [showLoginForm, setShowLoginForm] = useState(false);
+
+  // Toggle login form visibility
+  const handleLoginClick = () => {
+    setShowLoginForm(true);
+  };
+
+  // Close the login form
+  const handleCloseLoginForm = () => {
+    setShowLoginForm(false);
+  };
+
+  // Handle successful login
+  const handleLoginSuccess = (userId) => {
+    setUserId(userId);
+    setIsLoggedIn(true);
+    setShowLoginForm(false); // Close the login form on success
+  };
+
+  // Handle logout
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserId(null);
+  };
   const footerRef = useRef(null);
   const [showLogin, setShowLogin] = useState(false); // ✅ Manage Login Popup
 

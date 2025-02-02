@@ -22,7 +22,13 @@ public class UserService {
     private UserRepository userRepository;
     private final CartService cartService;
 
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder; // ✅ Use the injected bean
+
+    public User registerUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));  // Hash password
+        return userRepository.save(user);
+    }
 
     public UserService(CartService cartService) {
         this.cartService = cartService;
