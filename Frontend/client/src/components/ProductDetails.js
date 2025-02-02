@@ -7,18 +7,21 @@ function ProductDetails() {
   const { id } = useParams(); // Get the product id from the URL
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1); // Quantity state
+  const API_URL = "http://localhost:8080";
 
   useEffect(() => {
     // Fetch product details based on the id
     axios
-      .get(`http://localhost:8080/products/${id}`) // Adjust URL if needed
+      .get(`${API_URL}/products/${id}`) // Adjust URL if needed
       .then((response) => setProduct(response.data))
       .catch((error) => console.error("Error fetching product:", error));
   }, [id]);
+  const userId = localStorage.getItem("userId");
+  console.log(`userid ${userId}`)
 
   const addToCart = async () => {
     try {
-      const response = await axios.post(`http://localhost:8080/cart/1/add/${id}`, { quantity }); // Send quantity
+      const response = await axios.post(`${API_URL}/cart/${userId}/add/${id}`, { quantity }); // Send quantity
       console.log("Product added to cart:", response.data);
       alert("Product added to cart!");
     } catch (error) {

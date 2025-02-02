@@ -4,21 +4,24 @@ import productImg from "../img/StockCake-Sunset Perfume Silhouette_1719167831.jp
 import axios from "axios";
 
 function Products() {
+  const API_URL = "http://localhost:8080";
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/products") // Adjust URL if needed
+    fetch(`${API_URL}/products`) // Adjust URL if needed
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
+  const userId = localStorage.getItem("userId");
+  console.log(`userid ${userId}`)
 
   const addToCart = async (product) => {
     console.log("------");
     console.log(product.id);
     console.log("------");
     try {
-      const response = await axios.post(`http://localhost:8080/cart/1/add/${String(product.id)}`, product);
+      const response = await axios.post(`${API_URL}/cart/${userId}/add/${String(product.id)}`, product);
       return response.data;
     } catch (error) {
       console.error("Failed to add to cart:", error.response?.data?.message || error.message);
