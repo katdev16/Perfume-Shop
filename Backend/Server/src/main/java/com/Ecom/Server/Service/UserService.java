@@ -20,8 +20,13 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+    private final CartService cartService;
 
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public UserService(CartService cartService) {
+        this.cartService = cartService;
+    }
 
 
     public User getUserById(int id) {
@@ -64,6 +69,8 @@ public class UserService {
 //        // Hash the password before saving the user
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        Cart cart = new Cart();
+        cartService.createCart();
 
 
 
