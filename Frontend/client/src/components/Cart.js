@@ -20,7 +20,8 @@ const Cart = () => {
   ];
 
 
-const API_URL = "http://localhost:8080";
+// const API_URL = "http://localhost:8080";
+const API_URL = "https://perfume-shop-4.onrender.com"
 
   const [cartItems, setCartItems] = useState([]);
   const userId = localStorage.getItem("userId");

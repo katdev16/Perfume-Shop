@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080";
+// const API_URL = "http://localhost:8080";
+const API_URL = "https://perfume-shop-4.onrender.com"
 
 // ✅ Fix: Correct login endpoint
 export const loginUser = async ({ email, password }) => {

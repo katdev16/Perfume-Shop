@@ -7,7 +7,8 @@ function ProductDetails() {
   const { id } = useParams(); // Get the product id from the URL
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1); // Quantity state
-  const API_URL = "http://localhost:8080";
+  // const API_URL = "http://localhost:8080";
+  const API_URL = "https://perfume-shop-4.onrender.com"
 
   useEffect(() => {
     // Fetch product details based on the id

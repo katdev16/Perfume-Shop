@@ -4,7 +4,8 @@ import productImg from "../img/StockCake-Sunset Perfume Silhouette_1719167831.jp
 import axios from "axios";
 
 function Products() {
-  const API_URL = "http://localhost:8080";
+  // const API_URL = "http://localhost:8080";
+  const API_URL = "https://perfume-shop-4.onrender.com"
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
