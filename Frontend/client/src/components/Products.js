@@ -33,14 +33,15 @@ function Products() {
 
   useEffect(() => {
     const defaultProducts = [
-      { name: "Gucci", price: "999.99", category: "perfume" },
-      { name: "Scent", price: "99.99", category: "perfume" },
-      { name: "Crystal", price: "199.99", category: "perfume" }
+      { "name": "Gucci", "price": 999.99, "category": "perfume" },
+      { "name": "Scent", "price": 99.99, "category": "perfume" },
+      { "name": "Crystal", "price": 199.99, "category": "perfume" }
     ];
 
     defaultProducts.forEach(async (product) => {
       try {
         await AddProduct(product);
+        then(() => setProducts(product))
       } catch (error) {
         console.error(`Failed to add ${product.name}:`, error.message);
       }
