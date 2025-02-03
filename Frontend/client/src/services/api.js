@@ -13,6 +13,15 @@ export const loginUser = async ({ email, password }) => {
   }
 };
 
+export const AddProduct = async ({ product}) => {
+  try {
+    const response = await axios.post(`${API_URL}/products`, { product});
+    return response.data; // User data or token
+  } catch (error) {
+    throw new Error(error.response?.data || "Failed to add");
+  }
+};
+
 // ✅ Fix: Correct register endpoint
 export const registerUser = async (userData) => {
   try {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import Link to handle routing
 import productImg from "../img/StockCake-Sunset Perfume Silhouette_1719167831.jpg";
 import axios from "axios";
+import { AddProduct} from "../services/api"; 
 
 function Products() {
   // const API_URL = "http://localhost:8080";
@@ -29,6 +30,23 @@ function Products() {
       throw new Error(error.response?.data?.message || "Failed to add to cart");
     }
   };
+
+  useEffect(() => {
+    const defaultProducts = [
+      { name: "Gucci", price: "999.99", category: "perfume" },
+      { name: "Scent", price: "99.99", category: "perfume" },
+      { name: "Crystal", price: "199.99", category: "perfume" }
+    ];
+
+    defaultProducts.forEach(async (product) => {
+      try {
+        await AddProduct(product);
+      } catch (error) {
+        console.error(`Failed to add ${product.name}:`, error.message);
+      }
+    });
+  }, []);
+
 
   return (
     <section id="product1" className="section-p1">
