@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Project README</title>
-    
-</head>
+
 <body>
     <h1>E-Commerce Project</h1>
     <p>Welcome to the E-Commerce project! This project is a fully functional online store where users can browse products, add them to their cart, and make purchases.</p>
