@@ -1,26 +1,4 @@
 
-
-<h1>E-Commerce Project README</h1>
-<style>
-body {
-font-family: Arial, sans-serif;
-line-height: 1.6;
-max-width: 800px;
-margin: 20px auto;
-padding: 20px;
-border: 1px solid #ddd;
-border-radius: 5px;
-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-        h1, h2 {
-            color: #333;
-        }
-        code {
-            background: #f4f4f4;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-</style>
 </head>
 <body>
 <h1>E-Commerce Project</h1>
@@ -40,24 +18,24 @@ box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 <h3>Backend (Spring Boot)</h3>
 <ol>
 <li>Clone the repository: <code>git clone https://github.com/yourusername/ecommerce-backend.git</code></li>
-<li>Navigate to the backend directory: <code>cd ecommerce-backend</code></li>
+<li>Navigate to the backend directory: <code>cd backend</code></li>
 <li>Install dependencies: <code>mvn clean install</code></li>
 <li>Run the application: <code>mvn spring-boot:run</code></li>
 </ol>
     
 <h3>Frontend (React)</h3>
 <ol>
-<li>Clone the repository: <code>git clone https://github.com/yourusername/ecommerce-frontend.git</code></li>
-<li>Navigate to the frontend directory: <code>cd ecommerce-frontend</code></li>
+<li>Clone the repository: <code>git clone https://github.com/katdev16/Perfume-Shop.git</code></li>
+<li>Navigate to the frontend directory: <code>cd Frontend</code></li>
 <li>Install dependencies: <code>npm install</code></li>
 <li>Start the development server: <code>npm start</code></li>
 </ol>
     
 <h2>Technologies Used</h2>
 <ul>
-<li>Frontend: React, Redux, Tailwind CSS</li>
+<li>Frontend: React,CSS</li>
 <li>Backend: Spring Boot, Java, Spring Security</li>
-<li>Database: MySQL</li>
+<li>Database: h2</li>
 <li>Payment Integration: Stripe</li>
 </ul>
     
