@@ -2,7 +2,7 @@
 </head>
 <body>
 <h1>E-Commerce Project</h1>
-<p>Welcome to the E-Commerce project! This project is a fully functional online store built using React for the frontend and Spring Boot for the backend.</p>
+<p>Welcome to the E-Commerce project! This project is a fully functional online store built using React for the frontend and Spring Boot for the backend with docker.</p>
     
 <h2>Features</h2>
 <ul>
@@ -11,6 +11,7 @@
 <li>Shopping cart functionality</li>
 <li>Secure checkout and payment integration</li>
 <li>Order management and tracking</li>
+<li>Admin dashboard</li>
 </ul>
     
 <h2>Installation</h2>
